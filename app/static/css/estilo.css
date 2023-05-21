@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: white;
+    font-family: 'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;
+}
+
+body {
+    background-color: #273746;
+}
+
+.Contendor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.TextoIngresado {
+    width: 45%;
+    height: 500px; /* Ajusta el valor para aumentar la altura */
+    border: 4px solid black;
+    margin-top: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    background-color: #273746;
+    outline: none;
+}
+
+.TextoIngresado::placeholder {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.Editor {
+    margin-left: 18px;
+    width: 50%;
+    border: 4px solid black;
+    margin-top: 10px;
+    background-color: #273746;
+}
+
+.BotonesContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Agrega esta línea */
+    margin-top: 5px; /* Ajusta el valor para reducir el espacio superior */
+}
+
+.Boton {
+    margin-right: 10px;
+    height: 50px;
+    width: auto;
+    border: 2px solid gray;
+    background-color: black;
+    padding: 5px; /* Ajusta el valor para reducir el espacio interno */
+}
+
+.Boton:hover {
+    background-color: gray;
+    color: white;
+  }  
+
+.Mensaje {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+  }
+  

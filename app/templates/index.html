@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de código</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+<body>
+    <div class="Contendor">
+        <div class="BotonesContainer">
+            <button class="Boton" id="CompilarButton">Compilar</button>
+            <button class="Boton" id="EjecutarButton">Ejecutar</button>
+            <button class="Boton" id="SpanishButton">Español</button>
+            <button class="Boton" id="EnglishButton">Inglés</button>
+            <button class="Boton" id="FrenchButton">Francés</button>
+        </div>
+        <textarea class="TextoIngresado" id="TextoIngresado" placeholder="Escribe tu código aquí"></textarea>
+        <iframe class="Editor" id="Editor" srcdoc="Resultados aquí"></iframe>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
