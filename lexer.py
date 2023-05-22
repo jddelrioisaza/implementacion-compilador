@@ -1,14 +1,11 @@
 import ply.lex as lex
 import re
-import codecs
-import os
-import sys
 
-tokens = ['IDENTIFICADOR', 'NUMERO', 'SUMA', 'RESTA', 'MULTIPLICACION', 'DIVISION', 'PAR',
+tokens = ['IDENTIFICADOR', 'NUMERO', 'SUMA', 'RESTA', 'MULTIPLICACION', 'DIVISION',
           'ASIGNACION', 'DIFERENTE', 'MENOR', 'MENORI', 'MAYOR', 'MAYORI', 'PARENTESISI',
           'PARENTESISD', 'COMA', 'PUNTOCOMA', 'PUNTO', 'ACTUALIZAR']
 
-palabrasReservadas = ['INICIAR', 'FINALIZAR', 'SI', 'ENTONCES', 'SINO', 'MIENTRAS', 'HACER', 'LLAMAR', 'CONSTANTE', 'ENTERO', 'PROCEDIMIENTO', 'FUERA', 'DENTRO']
+palabrasReservadas = ['INICIAR', 'FINALIZAR', 'SI', 'ENTONCES', 'SINO', 'MIENTRAS', 'HACER', 'LLAMAR', 'CONSTANTE', 'VARIABLE', 'ENTERO', 'PROCEDIMIENTO', 'FUERA', 'DENTRO']
 
 tokens = tokens + palabrasReservadas
 
@@ -17,7 +14,6 @@ t_SUMA = r'\+'
 t_RESTA = r'\-'
 t_MULTIPLICACION = r'\*'
 t_DIVISION = r'/'
-t_PAR = r'PAR'
 t_ASIGNACION = r'='
 t_DIFERENTE = r'<>'
 t_MENOR = r'<'
@@ -67,14 +63,5 @@ def t_error(t):
     print("¡CARACTER ILEGAL!: '%s'" % t.value[0])
     t.lexer.skip(1)
 
+
 analizador = lex.lex()
-
-cadena = "CONSTANTE a = Perro;"
-
-analizador.input(cadena)
-
-while True:
-
-    token = analizador.token()
-    if not token : break
-    print(token)
